@@ -13,11 +13,12 @@ struct DetailsHeaderView: View {
     @State private var selectedImage: UIImage?
     @State private var showingImagePicker = false
     @State private var photosPickerItem: PhotosPickerItem?
-    
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
         HStack {
             Button(action: {
-                
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                 Image(systemName: "chevron.left")
                     .font(.subheadline)
